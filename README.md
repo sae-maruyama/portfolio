@@ -93,7 +93,8 @@ jobs:
             --exclude ".github/*" \
             --exclude "*.md" \
             --delete
-            ```
+```
+
 ## 4. Github Actionsで実行状況を確認
 - ファイルが変わった部分だけ更新される（全部置き換えではない）
 - aws s3 sync は、ファイルのサイズ・最終更新日時をチェックし置き換えを判断する
