@@ -1,0 +1,821 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Jost', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #74A84A;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Header */
+header {
+    background-color: transparent;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+/* Hero Background Images - Page Specific */
+.hero.hero-top {
+    background: url('../images/top-banner.jpg') center/cover no-repeat;
+}
+
+.hero.hero-works {
+    background: url('../images/works-skills-banner.jpg') center/cover no-repeat;
+}
+
+.hero.hero-aws {
+    background: url('../images/aws-projects-banner.jpg') center/cover no-repeat;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 75px;
+    color: #2d5016;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hero h1 .small {
+    font-size: 0.4em;
+    font-weight: 400;
+}
+
+.hero.page-title {
+    height: 70vh;
+}
+
+.hero.page-title h1 {
+    font-size: 45px;
+}
+
+.hero p {
+    font-size: 26px;
+    color: #333;
+}
+
+/* Main Content */
+main {
+    padding-top: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.about-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #2d5016;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #74A84A;
+}
+
+.about-text h3 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: opacity 0.3s;
+}
+
+.social-links a:last-child {
+    width: 80px;
+    /* Zenn logo */
+    margin-right: 0;
+}
+
+.social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Works Section */
+.works {
+    background: url('../images/about-banner.jpg') center/cover no-repeat;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #2d5016;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    background-color: #74A84A;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #5d8a39;
+    opacity: 1;
+}
+
+.btn-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* AWS Section */
+.aws-section {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.aws-intro {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.project-item {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-text h3 {
+    font-size: 25px;
+    color: #2d5016;
+    margin-bottom: 20px;
+}
+
+.project-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    text-align: center;
+}
+
+.project-image img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Learning Section */
+.learning-section {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.learning-section h2 {
+    font-size: 28px;
+    color: #2d5016;
+    margin-bottom: 10px;
+}
+
+.learning-section .period {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.learning-section .mentor-info {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.learning-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.learning-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.learning-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.learning-table th {
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #f5f5f5;
+    width: 25%;
+}
+
+.learning-table td {
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.learning-image img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+}
+
+.learning-image p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Certifications Section */
+.certifications-section {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.certifications-section h2 {
+    font-size: 28px;
+    color: #2d5016;
+    margin-bottom: 30px;
+}
+
+.certifications-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.certification-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.certification-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Work Detail Section */
+.work-detail {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.work-item {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+}
+
+.work-category {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.work-item h2 {
+    font-size: 28px;
+    color: #2d5016;
+    margin-bottom: 10px;
+}
+
+.work-period {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.work-images {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.work-images img {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.work-info-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.work-info-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.work-info-table th {
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #f9f9f9;
+    width: 20%;
+    vertical-align: top;
+}
+
+.work-info-table td {
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.work-info-table td ol {
+    padding: 0px 20px;
+}
+
+/* Other Works Section */
+.other-works {
+    background: url('../images/about-banner.jpg') center/cover no-repeat;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.other-works h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #2d5016;
+    margin-bottom: 40px;
+}
+
+.other-work-item {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.other-work-item h3 {
+    font-size: 16px;
+    color: #2d5016;
+    margin-bottom: 10px;
+}
+
+.other-work-item p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-nav {
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    color: #333;
+    font-size: 13px;
+    margin: 0 15px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+}
+
+.footer-social-links {
+    margin: 0px 0;
+}
+
+.footer-social-links a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: opacity 0.3s;
+}
+
+.footer-social-links a:last-child {
+    width: 80px;
+    /* Zenn logo */
+    margin-right: 0;
+}
+
+.footer-social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-title {
+    font-size: 18px;
+    color: #2d5016;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background-color: #fff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s;
+        z-index: 999;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    nav a {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+    }
+
+    .logo img {
+        height: 32px;
+        max-width: 160px;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+
+    .hero h1 .small {
+        font-size: 0.35em;
+    }
+
+    .hero.page-title h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        margin-bottom: 20px;
+    }
+
+    .project-item {
+        grid-template-columns: 1fr;
+        margin-bottom: 50px;
+    }
+
+    .aws-section {
+        padding-bottom: 0;
+    }
+
+    .learning-content {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-table th {
+        width: 30%;
+        font-size: 13px;
+    }
+
+    .learning-table td {
+        font-size: 13px;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    .logo img {
+        height: 28px;
+        max-width: 140px;
+    }
+
+    /* トップページのヒーローコンテンツのフォントサイズを拡大 */
+    .hero.hero-top h1 {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+    .hero.hero-top h1 .small {
+        font-size: 0.35em;
+    }
+
+    .hero.hero-top p {
+        font-size: 20px;
+    }
+
+    /* 制作事例・AWS関係ページのヒーローセクションを半分の高さに、背景画像は下部固定 */
+    .hero.page-title {
+        height: 35vh;
+    }
+
+    .hero.hero-works,
+    .hero.hero-aws {
+        background-position: center bottom;
+    }
+
+    .hero.page-title h1 {
+        font-size: 24px;
+    }
+
+    .section-title,
+    .about-text h2,
+    .work-item h2,
+    .other-works h2,
+    .learning-section h2,
+    .certifications-section h2 {
+        font-size: 24px;
+    }
+
+    .project-text h3 {
+        font-size: 20px;
+    }
+
+    .project-item {
+        margin-bottom: 40px;
+    }
+
+    /* 学習テーブルのレスポンシブ */
+    .learning-table th {
+        display: block;
+        width: 100%;
+        background-color: #f5f5f5;
+        border-bottom: none;
+    }
+
+    .learning-table td {
+        display: block;
+        width: 100%;
+        padding-top: 5px;
+    }
+
+    .learning-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+    }
+
+    /* 制作事例詳細ページのテーブルはフォントサイズ16pxを維持 */
+    .work-info-table th {
+        display: block;
+        width: 100%;
+        background-color: #f5f5f5;
+        border-bottom: none;
+        font-size: 16px;
+    }
+
+    .work-info-table td {
+        display: block;
+        width: 100%;
+        padding-top: 5px;
+        font-size: 16px;
+    }
+
+    .work-info-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+    }
+
+    .certification-item img {
+        width: 80px;
+        height: 80px;
+    }
+}

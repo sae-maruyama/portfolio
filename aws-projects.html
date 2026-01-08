@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MARUKOのAWS構築実績。サーバーレス、Terraform、Step Functions、チャットボットなどの制作物を紹介しています。">
+    <title>AWS関係の制作物 | MARUKO's Portfolio</title>
+
+    <!-- OGP & Social Media -->
+    <meta property="og:title" content="AWS関係の制作物 | MARUKOのPORTFOLIO">
+    <meta property="og:description" content="MARUKOのAWS構築実績。サーバーレス、Terraform、Step Functions、チャットボットなどの制作物を紹介しています。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maruko.site/aws-projects.html">
+    <meta property="og:image" content="https://maruko.site/images/ogp-image.jpg">
+    <meta property="og:site_name" content="MARUKOのPORTFOLIO">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/maruko-portfolio.svg" alt="Site logo">
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="works-skills.html">これまでの制作事例</a></li>
+                    <li><a href="aws-projects.html">AWS関係の制作物</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero page-title hero-aws">
+            <div class="hero-content">
+                <h1>AWS 関係の制作物</h1>
+            </div>
+        </section>
+
+        <section class="aws-section">
+            <div class="container">
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>AWS サーバーレス お問い合わせフォーム</h3>
+                        <p>AWS の主要サービス（API Gateway／Lambda／DynamoDB）を利用して、静的 Web フォームから入力を受けて API 経由でデータ保存まで行う構成を実装。<br>
+                            セットアップ手順に加え、CORS や CSP などセキュリティ対応もREADME に記載しています。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/aws-inquiry-form" target="_blank" class="btn">View
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/inquiryform-handson.png" alt="AWS サーバーレス構成図">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>独自のRAGを用いたチャットボットの構築</h3>
+                        <p>Amazon Bedrock／Amazon Lex／Amazon Connect
+                            を連携して、Webサイト埋め込み型のチャットボットを構築。<br>
+                            READMEには構成図、前提条件、設定手順、CSPや文字数制限などのトラブルシューティングも記載しています。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/aws-chatbot-handson" target="_blank"
+                                class="btn">View GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/chatbot-handson.png" alt="チャットボット構成図">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>Terraform によるサーバーレス API 構築</h3>
+                        <p>Terraform を用いて、API Gateway／Lambda／DynamoDB
+                            の構成をコードで管理。可用性を高めるため、環境変数やリージョン設定を外部ファイル（tfvars）で管理する仕組みを実装。<br>
+                            tfstate を S3 バックエンドに設定する構成にしています。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/terraform-project-5" target="_blank"
+                                class="btn">View GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/terraform-handson.png" alt="Terraform構成図">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>問い合わせ自動応答ワークフローを Step Functionsで構築</h3>
+                        <p>AWS Step Functions を中心に、Lambda／SQS／DynamoDB／Bedrock
+                            を組み合わせて、問い合わせ受付からカテゴリ判定・自動応答生成までを自動化するサーバーレスワークフローを設計。<br>
+                            各 Lambda に環境変数を設定し、Bedrock連携による自然言語応答を実装しました。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/aws-stepfunctions-handson" target="_blank"
+                                class="btn">View GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/stepfunctions-handson.png" alt="Step Functions構成図">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="learning-section">
+            <div class="container">
+                <h2>CloudTech Academyでの学習内容</h2>
+                <p class="period">（2025/5～2025/11）</p>
+                <p class="mentor-info">ばーやん（<a href="https://x.com/baayan_public"
+                        target="_blank">@baayan_public</a>）さんにメンターに付いていただき学習しました。各回課題を提出し、ハンズオン実践のレビューをいただきました。</p>
+
+                <div class="learning-content">
+                    <div class="learning-image">
+                        <img src="images/architecture.png" alt="CloudTech Academy学習内容">
+                        <p>引用：https://docs.cloud-tech.com/cloudtech-academy-2</p>
+                    </div>
+
+                    <div class="learning-table-wrapper">
+                        <table class="learning-table">
+                            <tr>
+                                <th>インフラ学習</th>
+                                <td>VPC、ALB、Auto Scaling、RDS(Multi-AZ)、Route53、CloudFront、ACM、IAM、S3</td>
+                            </tr>
+                            <tr>
+                                <th>コンテナ</th>
+                                <td>Docker、ECS(Fargate)、ECR</td>
+                            </tr>
+                            <tr>
+                                <th>サーバーレス</th>
+                                <td>Lambda(Python)、API Gateway、DynamoDB、SQS、SES、Step Functions、EventBridge</td>
+                            </tr>
+                            <tr>
+                                <th>データ分析</th>
+                                <td>Glue、Athena、QuickSight</td>
+                            </tr>
+                            <tr>
+                                <th>CI/CD</th>
+                                <td>CodePipeline、CodeBuild、CodeDeploy</td>
+                            </tr>
+                            <tr>
+                                <th>IaC</th>
+                                <td>Terraform</td>
+                            </tr>
+                            <tr>
+                                <th>監視・運用</th>
+                                <td>CloudWatch、CloudWatch Alarm、AWS Config、Systems Manager、OU</td>
+                            </tr>
+                            <tr>
+                                <th>AI</th>
+                                <td>Bedrock</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <div class="container">
+                <h2>AWS 関係の取得資格</h2>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <img src="images/SAA-badge.jpg" alt="AWS SAA認定バッジ">
+                    </div>
+                    <div class="certification-item">
+                        <img src="images/SAP-badge.jpg" alt="AWS SAP認定バッジ">
+                    </div>
+                    <!-- 今後資格を追加する場合は、以下のように追加 -->
+                    <!-- 
+                    <div class="certification-item">
+                        <img src="images/aws-cert-2.png" alt="AWS認定資格">
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="index.html">トップ</a>
+            <a href="works-skills.html">これまでの制作事例</a>
+            <a href="aws-projects.html">AWS関係の制作物</a>
+        </div>
+        <a href="index.html" class="footer-logo">
+            <img src="images/maruko-portfolio.svg" alt="Site logo">
+        </a>
+        <div class="footer-social-links">
+            <a href="https://github.com/sae-maruyama/" target="_blank" aria-label="GitHub">
+                <img src="images/github-logo.png" alt="GitHub">
+            </a>
+            <a href="https://x.com/maruko_112" target="_blank" aria-label="X (Twitter)">
+                <img src="images/x-logo.png" alt="X">
+            </a>
+            <a href="https://zenn.dev/kuyan" target="_blank" aria-label="Zenn">
+                <img src="images/zenn-logo.png" alt="X">
+            </a>
+        </div>
+        <p class="copyright">©2025 Maruko. All rights reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script type="text/javascript">
+        (function (w, d, x, id) {
+            s = d.createElement('script');
+            s.src = 'https://maruko-site.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+            s.async = 1;
+            s.id = id;
+            d.getElementsByTagName('head')[0].appendChild(s);
+            w[x] = w[x] || function () { (w[x].ac = w[x].ac || []).push(arguments) };
+        })(window, document, 'amazon_connect', '83a69ca1-8899-4469-9bd1-faaf0f0264c8');
+        amazon_connect('styles', { iconType: 'CHAT', openChat: { color: '#ffffff', backgroundColor: '#2d5016' }, closeChat: { color: '#ffffff', backgroundColor: '#2d5016' } });
+        amazon_connect('snippetId', 'QVFJREFIaEFpZC9qKzF2OGFUT3pGdzRueCtKR2w1QmV1RmxLV3d2TVIzUEs2d1ZwVlFIWDcySGF2emFqWEdJOXJiY2o1S2VWQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNMUhqWENFTCs4VGpDUW5CbUFnRVFnQ3VIK0R2OHE4MUkyTWFDY2NucHhYR0l4WkFYdlRuemZ3bWpidXZqWUEyeDl1ZlU2Qm5jN2c0OHdWQSs6Olk5RDJvR2NGeFNaZnQ1MVp2eXJUbXlXUHJHMG5zeXF3dzl4dWVmbW0yOWlJMTZLRStpYm1PU1VUYmlMNFhMVFNaZkxvWWxYcGhGa0tVekhJb0tSNUFEaXpSOHg1Sk9OQ1cxTHViVnhFM0xTbmMwZXZ3K1BsU2JuMHdHVFVkY09oSlZEN3EzVmxPV1NZMW1NMU1zWXlIaFJGSlJyWXdmYz0=');
+        amazon_connect('supportedMessagingContentTypes', ['text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response']);
+    </script>
+
+</body>
+
+</html>

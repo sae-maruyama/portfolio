@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MARUKOのポートフォリオサイト。これまでのWeb制作実績などを紹介しています。">
+    <title>MARUKO's Portfolio</title>
+
+    <!-- OGP & Social Media -->
+    <meta property="og:title" content="MARUKOのPORTFOLIO">
+    <meta property="og:description" content="MARUKOのポートフォリオサイト。これまでのWeb制作実績などを紹介しています。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maruko.site/">
+    <meta property="og:image" content="https://maruko.site/images/ogp-image.jpg">
+    <meta property="og:site_name" content="MARUKOのPORTFOLIO">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/maruko-portfolio.svg" alt="Site logo">
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="works-skills.html">これまでの制作事例</a></li>
+                    <li><a href="aws-projects.html">AWS関係の制作物</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero hero-top">
+            <div class="hero-content">
+                <h1>MARUKO<span class="small">の</span></h1>
+                <p>PORTFOLIOへようこそ</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/maruko.jpg" alt="maruko">
+                    </div>
+                    <div class="about-text">
+                        <h2>自己紹介</h2>
+
+                        <h3>【経歴概要】</h3>
+                        <p>2023年3月に大学を卒業した後、中小企画制作会社でWebディレクター・WebデザイナーとしてWeb制作（WordPress/ECサイト構築）を中心に従事してきました。サイトのデザインやマークアップだけでなく、サーバー運用、セキュリティ対策、運用保守といった技術面にも携わり、要件定義の段階から実装・運用まで一貫して担当してきました。
+                        </p>
+
+                        <h3>【AWSを学んだきっかけ】</h3>
+                        <p>Web制作を続ける中で、サイトの「見えない部分」（速度やセキュリティ、システムの信頼性と可用性）の大切さを強く感じました。そうした仕組みを自分の手で実装できるようになりたいという思いから、AWSを中心としたクラウドインフラの学習を始めました。
+                        </p>
+
+                        <h3>【所持資格】</h3>
+                        <p>AWS SAA（2025/11）<br>
+                        AWS SAP（2025/11）</p>
+
+                        <h3>【現在の目標】</h3>
+                        <p>現在はクラウドを扱えるエンジニアを目指しています。これまでのWeb制作の経験を糧にしつつ、クラウドのサーバー構築から運用・監視・自動化まで一貫して対応できる人材となるため、基礎を大切にしながら技術を常に学び続け、開発に取り組んでいきます。
+                        </p>
+
+                        <p>よかったら、右下のチャットボットに話しかけてみてください。<br>私のことを詳しく紹介しています。</p>
+
+                        <div class="social-links">
+                            <a href="https://github.com/sae-maruyama/" target="_blank" aria-label="GitHub">
+                                <img src="images/github-logo.png" alt="GitHub">
+                            </a>
+                            <a href="https://x.com/maruko_112" target="_blank" aria-label="X (Twitter)">
+                                <img src="images/x-logo.png" alt="X">
+                            </a>
+                            <a href="https://zenn.dev/kuyan" target="_blank" aria-label="Zenn">
+                                <img src="images/zenn-logo.png" alt="X">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="works">
+            <div class="container">
+                <h2 class="section-title">これまでの制作事例</h2>
+                <p class="section-subtitle">実績紹介</p>
+                <div class="btn-center">
+                    <a href="works-skills.html" class="btn">View more</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="aws-section">
+            <div class="container">
+                <h2 class="section-title">AWS関係の制作物</h2>
+
+                <div class="aws-intro">
+                    <p>CloudTech
+                        Academyで現役エンジニアのレビューを受けながら、Web3層冗長化構成、ECS/Lambdaによるコンテナ・サーバーレス構成、監視設計、CI/CDパイプライン、TerraformによるIaC化まで、構成図の作図、コード化、動作検証をハンズオン形式で実践し、一部をGitHub上に公開しています。
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>AWS サーバーレス お問い合わせフォーム</h3>
+                        <p>AWS の主要サービス（API Gateway／Lambda／DynamoDB）を利用して、静的 Web フォームから入力を受けて API 経由でデータ保存まで行う構成を実装。<br>
+                        セットアップ手順に加え、CORS や CSP などセキュリティ対応もREADME に記載しています。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/aws-inquiry-form" target="_blank" class="btn">View
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/inquiryform-handson.png" alt="AWS サーバーレス構成図">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>独自のRAGを用いたチャットボットの構築</h3>
+                        <p>Amazon Bedrock／Amazon Lex／Amazon Connect
+                            を連携して、Webサイト埋め込み型のチャットボットを構築。<br>
+                            READMEには構成図、前提条件、設定手順、CSPや文字数制限などのトラブルシューティングも記載しています。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/aws-chatbot-handson" target="_blank"
+                                class="btn">View GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/chatbot-handson.png" alt="チャットボット構成図">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>Terraform によるサーバーレス API 構築</h3>
+                        <p>Terraform を用いて、API Gateway／Lambda／DynamoDB
+                            の構成をコードで管理。可用性を高めるため、環境変数やリージョン設定を外部ファイル（tfvars）で管理する仕組みを実装。<br>
+                            tfstate を S3 バックエンドに設定する構成にしています。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/terraform-project-5" target="_blank"
+                                class="btn">View GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/terraform-handson.png" alt="Terraform構成図">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>問い合わせ自動応答ワークフローを Step Functionsで構築</h3>
+                        <p>AWS Step Functions を中心に、Lambda／SQS／DynamoDB／Bedrock
+                            を組み合わせて、問い合わせ受付からカテゴリ判定・自動応答生成までを自動化するサーバーレスワークフローを設計。<br>
+                            各 Lambda に環境変数を設定し、Bedrock連携による自然言語応答を実装しました。</p>
+                        <div>
+                            <a href="https://github.com/sae-maruyama/aws-stepfunctions-handson" target="_blank"
+                                class="btn">View GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/stepfunctions-handson.png" alt="Step Functions構成図">
+                    </div>
+                </div>
+
+                <div class="btn-center">
+                    <a href="aws-projects.html" class="btn">View more</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="index.html">トップ</a>
+            <a href="works-skills.html">これまでの制作事例</a>
+            <a href="aws-projects.html">AWS関係の制作物</a>
+        </div>
+        <a href="index.html" class="footer-logo">
+            <img src="images/maruko-portfolio.svg" alt="Site logo">
+        </a>
+        <div class="footer-social-links">
+            <a href="https://github.com/sae-maruyama/" target="_blank" aria-label="GitHub">
+                <img src="images/github-logo.png" alt="GitHub">
+            </a>
+            <a href="https://x.com/maruko_112" target="_blank" aria-label="X (Twitter)">
+                <img src="images/x-logo.png" alt="X">
+            </a>
+            <a href="https://zenn.dev/kuyan" target="_blank" aria-label="Zenn">
+                <img src="images/zenn-logo.png" alt="X">
+            </a>
+        </div>
+        <p class="copyright">©2025 Maruko. All rights reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script type="text/javascript">
+        (function (w, d, x, id) {
+            s = d.createElement('script');
+            s.src = 'https://maruko-site.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+            s.async = 1;
+            s.id = id;
+            d.getElementsByTagName('head')[0].appendChild(s);
+            w[x] = w[x] || function () { (w[x].ac = w[x].ac || []).push(arguments) };
+        })(window, document, 'amazon_connect', '83a69ca1-8899-4469-9bd1-faaf0f0264c8');
+        amazon_connect('styles', { iconType: 'CHAT', openChat: { color: '#ffffff', backgroundColor: '#2d5016' }, closeChat: { color: '#ffffff', backgroundColor: '#2d5016' } });
+        amazon_connect('snippetId', 'QVFJREFIaEFpZC9qKzF2OGFUT3pGdzRueCtKR2w1QmV1RmxLV3d2TVIzUEs2d1ZwVlFIWDcySGF2emFqWEdJOXJiY2o1S2VWQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNMUhqWENFTCs4VGpDUW5CbUFnRVFnQ3VIK0R2OHE4MUkyTWFDY2NucHhYR0l4WkFYdlRuemZ3bWpidXZqWUEyeDl1ZlU2Qm5jN2c0OHdWQSs6Olk5RDJvR2NGeFNaZnQ1MVp2eXJUbXlXUHJHMG5zeXF3dzl4dWVmbW0yOWlJMTZLRStpYm1PU1VUYmlMNFhMVFNaZkxvWWxYcGhGa0tVekhJb0tSNUFEaXpSOHg1Sk9OQ1cxTHViVnhFM0xTbmMwZXZ3K1BsU2JuMHdHVFVkY09oSlZEN3EzVmxPV1NZMW1NMU1zWXlIaFJGSlJyWXdmYz0=');
+        amazon_connect('supportedMessagingContentTypes', ['text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response']);
+    </script>
+
+</body>
+
+</html>
