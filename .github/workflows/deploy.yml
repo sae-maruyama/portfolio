@@ -2,17 +2,28 @@ name: Deploy Portfolio to S3
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  s3ls:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
     steps:
-      - uses: aws-actions/configure-aws-credentials@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: "ap-northeast-1"
           role-to-assume: "arn:aws:iam::166855511114:role/oidc-githubactions-s3-portfolio-role"
 
-      - run: aws s3 ls s3://maruko.site
+      - name: Deploy to S3
+        run: |
+          aws s3 sync . s3://maruko.site \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
