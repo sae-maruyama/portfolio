@@ -58,3 +58,42 @@ git push -u origin main
 - ロール名 に任意のロール名を入力して作成完了
 
 3. GitHub Actions で OIDC を使用して AWS 認証を行う
+- ここでようやくワークフローを作成する
+- AWS 認証には aws-actions/configure-aws-credentials アクションを使用する
+- role-to-assume に IAM ロールの ARN を指定するだけで OIDC を使用した AWS 認証を行ってくれるので便利
+
+```
+name: Deploy Portfolio to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: "ap-northeast-1"
+          role-to-assume: "arn:aws:iam::<アカウント名>:role/<IAMロール名>"
+      
+      - name: Deploy to S3
+        run: |
+          aws s3 sync . s3://<バケット名> \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --delete
+            ```
+4. Github Actionsで実行状況を確認
+- ファイルが変わった部分だけ更新される（全部置き換えではない）
+- aws s3 sync は、ファイルのサイズ・最終更新日時をチェックし置き換えを判断する
