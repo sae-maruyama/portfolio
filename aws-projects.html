@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MARUKOのAWS構築実績。サーバーレス、Terraform、Step Functions、チャットボットなどの制作物を紹介しています。">
+    <meta name="theme-color" content="#74A84A">
     <title>AWS関係の制作物 | MARUKO's Portfolio</title>
 
     <!-- OGP & Social Media -->
@@ -18,6 +19,7 @@
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="icon" href="images/maruko-portfolio.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,37 +31,39 @@
                     <img src="images/maruko-portfolio.svg" alt="Site logo">
                 </a>
             </div>
-            <nav id="nav">
+            <nav id="nav" aria-label="メインナビゲーション">
                 <ul>
                     <li><a href="index.html">トップ</a></li>
                     <li><a href="works-skills.html">これまでの制作事例</a></li>
                     <li><a href="aws-projects.html">AWS関係の制作物</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
+            <button type="button" class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="hero page-title hero-aws">
+        <section class="hero page-title hero-aws" aria-labelledby="page-heading">
             <div class="hero-content">
-                <h1>AWS 関係の制作物</h1>
+                <h1 id="page-heading">AWS 関係の制作物</h1>
             </div>
         </section>
 
-        <section class="aws-section">
+        <section class="aws-section" aria-labelledby="aws-projects-heading">
             <div class="container">
+                <h2 id="aws-projects-heading" class="sr-only">制作物一覧</h2>
+
                 <div class="project-item">
                     <div class="project-text">
                         <h3>AWS サーバーレス お問い合わせフォーム</h3>
                         <p>AWS の主要サービス（API Gateway／Lambda／DynamoDB）を利用して、静的 Web フォームから入力を受けて API 経由でデータ保存まで行う構成を実装。<br>
                             セットアップ手順に加え、CORS や CSP などセキュリティ対応もREADME に記載しています。</p>
                         <div>
-                            <a href="https://github.com/sae-maruyama/aws-inquiry-form" target="_blank"
+                            <a href="https://github.com/sae-maruyama/aws-inquiry-form" target="_blank" rel="noopener noreferrer"
                                 class="btn">GitHubを見る</a>
                         </div>
                     </div>
@@ -75,7 +79,7 @@
                             を連携して、Webサイト埋め込み型のチャットボットを構築。<br>
                             READMEには構成図、前提条件、設定手順、CSPや文字数制限などのトラブルシューティングも記載しています。</p>
                         <div>
-                            <a href="https://github.com/sae-maruyama/aws-chatbot-handson" target="_blank"
+                            <a href="https://github.com/sae-maruyama/aws-chatbot-handson" target="_blank" rel="noopener noreferrer"
                                 class="btn">GitHubを見る</a>
                         </div>
                     </div>
@@ -91,7 +95,7 @@
                             の構成をコードで管理。可用性を高めるため、環境変数やリージョン設定を外部ファイル（tfvars）で管理する仕組みを実装。<br>
                             tfstate を S3 バックエンドに設定する構成にしています。</p>
                         <div>
-                            <a href="https://github.com/sae-maruyama/terraform-project-5" target="_blank"
+                            <a href="https://github.com/sae-maruyama/terraform-project-5" target="_blank" rel="noopener noreferrer"
                                 class="btn">GitHubを見る</a>
                         </div>
                     </div>
@@ -107,7 +111,7 @@
                             を組み合わせて、問い合わせ受付からカテゴリ判定・自動応答生成までを自動化するサーバーレスワークフローを設計。<br>
                             各 Lambda に環境変数を設定し、Bedrock連携による自然言語応答を実装しました。</p>
                         <div>
-                            <a href="https://github.com/sae-maruyama/aws-stepfunctions-handson" target="_blank"
+                            <a href="https://github.com/sae-maruyama/aws-stepfunctions-handson" target="_blank" rel="noopener noreferrer"
                                 class="btn">GitHubを見る</a>
                         </div>
                     </div>
@@ -118,12 +122,12 @@
             </div>
         </section>
 
-        <section class="learning-section">
+        <section class="learning-section" aria-labelledby="learning-heading">
             <div class="container">
-                <h2>CloudTech Academyでの学習内容</h2>
+                <h2 id="learning-heading">CloudTech Academyでの学習内容</h2>
                 <p class="period">（2025/5～2025/11）</p>
                 <p class="mentor-info">ばーやん（<a href="https://x.com/baayan_public"
-                        target="_blank">@baayan_public</a>）さんにメンターに付いていただき学習しました。各回課題を提出し、ハンズオン実践のレビューをいただきました。</p>
+                        target="_blank" rel="noopener noreferrer">@baayan_public</a>）さんにメンターに付いていただき学習しました。各回課題を提出し、ハンズオン実践のレビューをいただきました。</p>
 
                 <div class="learning-content">
                     <div class="learning-image">
@@ -133,47 +137,49 @@
 
                     <div class="learning-table-wrapper">
                         <table class="learning-table">
-                            <tr>
-                                <th>インフラ学習</th>
-                                <td>VPC、ALB、Auto Scaling、RDS(Multi-AZ)、Route53、CloudFront、ACM、IAM、S3</td>
-                            </tr>
-                            <tr>
-                                <th>コンテナ</th>
-                                <td>Docker、ECS(Fargate)、ECR</td>
-                            </tr>
-                            <tr>
-                                <th>サーバーレス</th>
-                                <td>Lambda(Python)、API Gateway、DynamoDB、SQS、SES、Step Functions、EventBridge</td>
-                            </tr>
-                            <tr>
-                                <th>データ分析</th>
-                                <td>Glue、Athena、QuickSight</td>
-                            </tr>
-                            <tr>
-                                <th>CI/CD</th>
-                                <td>CodePipeline、CodeBuild、CodeDeploy</td>
-                            </tr>
-                            <tr>
-                                <th>IaC</th>
-                                <td>Terraform</td>
-                            </tr>
-                            <tr>
-                                <th>監視・運用</th>
-                                <td>CloudWatch、CloudWatch Alarm、AWS Config、Systems Manager、OU</td>
-                            </tr>
-                            <tr>
-                                <th>AI</th>
-                                <td>Bedrock</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">インフラ学習</th>
+                                    <td>VPC、ALB、Auto Scaling、RDS(Multi-AZ)、Route53、CloudFront、ACM、IAM、S3</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">コンテナ</th>
+                                    <td>Docker、ECS(Fargate)、ECR</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">サーバーレス</th>
+                                    <td>Lambda(Python)、API Gateway、DynamoDB、SQS、SES、Step Functions、EventBridge</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">データ分析</th>
+                                    <td>Glue、Athena、QuickSight</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CI/CD</th>
+                                    <td>CodePipeline、CodeBuild、CodeDeploy</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">IaC</th>
+                                    <td>Terraform</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">監視・運用</th>
+                                    <td>CloudWatch、CloudWatch Alarm、AWS Config、Systems Manager、OU</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AI</th>
+                                    <td>Bedrock</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="certifications-section">
+        <section class="certifications-section" aria-labelledby="certs-heading">
             <div class="container">
-                <h2>AWS 関係の取得資格</h2>
+                <h2 id="certs-heading">AWS 関係の取得資格</h2>
                 <div class="certifications-grid">
                     <div class="certification-item">
                         <img src="images/SAA-badge.jpg" alt="AWS SAA認定バッジ">
@@ -182,7 +188,7 @@
                         <img src="images/SAP-badge.jpg" alt="AWS SAP認定バッジ">
                     </div>
                     <!-- 今後資格を追加する場合は、以下のように追加 -->
-                    <!-- 
+                    <!--
                     <div class="certification-item">
                         <img src="images/aws-cert-2.png" alt="AWS認定資格">
                     </div>
@@ -193,29 +199,29 @@
     </main>
 
     <footer>
-        <div class="footer-nav">
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
             <a href="index.html">トップ</a>
             <a href="works-skills.html">これまでの制作事例</a>
             <a href="aws-projects.html">AWS関係の制作物</a>
-        </div>
+        </nav>
         <a href="index.html" class="footer-logo">
             <img src="images/maruko-portfolio.svg" alt="Site logo">
         </a>
         <div class="footer-social-links">
-            <a href="https://github.com/sae-maruyama/" target="_blank" aria-label="GitHub">
-                <img src="images/github-logo.png" alt="GitHub">
+            <a href="https://github.com/sae-maruyama/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github-logo.png" alt="">
             </a>
-            <a href="https://x.com/maruko_112" target="_blank" aria-label="X (Twitter)">
-                <img src="images/x-logo.png" alt="X">
+            <a href="https://x.com/maruko_112" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <img src="images/x-logo.png" alt="">
             </a>
-            <a href="https://zenn.dev/kuyan" target="_blank" aria-label="Zenn">
-                <img src="images/zenn-logo.png" alt="X">
+            <a href="https://zenn.dev/kuyan" target="_blank" rel="noopener noreferrer" aria-label="Zenn">
+                <img src="images/zenn-logo.png" alt="">
             </a>
         </div>
         <p class="copyright">©2025 Maruko. All rights reserved</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 
     <script type="text/javascript">
         (function (w, d, x, id) {

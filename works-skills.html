@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MARUKOのWeb制作実績。会員制ポータルサイト、観光データポータルサイトなどの制作事例を紹介しています。">
+    <meta name="theme-color" content="#74A84A">
     <title>これまでの制作事例 | MARUKO's Portfolio</title>
 
     <!-- OGP & Social Media -->
@@ -18,6 +19,7 @@
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="icon" href="images/maruko-portfolio.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,129 +31,124 @@
                     <img src="images/maruko-portfolio.svg" alt="Site logo">
                 </a>
             </div>
-            <nav id="nav">
+            <nav id="nav" aria-label="メインナビゲーション">
                 <ul>
                     <li><a href="index.html">トップ</a></li>
                     <li><a href="works-skills.html">これまでの制作事例</a></li>
                     <li><a href="aws-projects.html">AWS関係の制作物</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
+            <button type="button" class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="hero page-title hero-works">
+        <section class="hero page-title hero-works" aria-labelledby="page-heading">
             <div class="hero-content">
-                <h1>これまでの制作事例</h1>
+                <h1 id="page-heading">これまでの制作事例</h1>
             </div>
         </section>
 
-        <section class="work-detail">
+        <section class="work-detail" aria-label="制作事例詳細一覧">
             <div class="container">
                 <div class="work-item">
-                    <!-- <p class="work-category"></p> -->
                     <h2>数千人規模の利用を想定した会員制ポータルサイト</h2>
                     <p class="work-period">（2023年度～現在）</p>
 
-                    <!-- <div class="work-images">
-                        <img src="" alt="">
-                    </div> -->
-
                     <table class="work-info-table">
-                        <tr>
-                            <th>概要</th>
-                            <td>大手鉄道会社の奈良訪問キャンペーンと連動し、奈良県内での独自イベント情報の提供や申し込み機能を備えた会員制ポータルサイトを新規構築しました。2023年のリリース以降、首都圏のアクティブシニア層を中心に数千人規模の会員を獲得し、年数回開催されるイベントには多数の会員様にご参加いただいています。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>クライアント</th>
-                            <td>大手鉄道会社の広告代理店
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>技術・環境</th>
-                            <td>WordPress、WooCommerce、JetEngine、MailJet<br>ISMS（ISO27001）準拠の情報管理</td>
-                        </tr>
-                        <tr>
-                            <th>自身の役割<br>(ポジション・関与範囲)</th>
-                            <td>Webサイト制作の主担当者として、イベント申し込み機能や、動画配信機能を設計しました。会員管理については、Stripeと連携を行い、有料会員のサブスクリプション機能を実装したほか、会員限定クーポン発行による割引機能などを構築しました。リリース後は、掲載内容の更新や運用保守を担当し、クライアントからの相談に随時対応しています。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>苦労した点</th>
-                            <td>開発期間は約4ヶ月の予定でしたが、当初依頼していた制作会社での開発が難航し、リリースまで残り2ヶ月の段階で自社にて開発を全て巻き取りました。特に会員機能周りの構築には時間を要したため、時には深夜まで開発を行いつつ、期間内にリリースすることができました。新卒1年目でのこの経験は、私にとって非常に大切な経験となりました。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>工夫した点と成果</th>
-                            <td>
-                                <ol>
-                                    <li>短い開発期間であっても、構築にあたってドキュメントを丁寧に読み込みました。
-                                    </li>
-                                    <li>実際のユースケースを想定し、起こりうる可能性のある行動パターンの抽出とテストを着実に行いました。</li>
-                                    <li>運用フェーズでは、マニュアルを作成し、社内メンバーに対して管理方法の指導を行い、保守運用の体制づくりに貢献しました。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th scope="row">概要</th>
+                                <td>大手鉄道会社の奈良訪問キャンペーンと連動し、奈良県内での独自イベント情報の提供や申し込み機能を備えた会員制ポータルサイトを新規構築しました。2023年のリリース以降、首都圏のアクティブシニア層を中心に数千人規模の会員を獲得し、年数回開催されるイベントには多数の会員様にご参加いただいています。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">クライアント</th>
+                                <td>大手鉄道会社の広告代理店
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">技術・環境</th>
+                                <td>WordPress、WooCommerce、JetEngine、MailJet<br>ISMS（ISO27001）準拠の情報管理</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">自身の役割<br>(ポジション・関与範囲)</th>
+                                <td>Webサイト制作の主担当者として、イベント申し込み機能や、動画配信機能を設計しました。会員管理については、Stripeと連携を行い、有料会員のサブスクリプション機能を実装したほか、会員限定クーポン発行による割引機能などを構築しました。リリース後は、掲載内容の更新や運用保守を担当し、クライアントからの相談に随時対応しています。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">苦労した点</th>
+                                <td>開発期間は約4ヶ月の予定でしたが、当初依頼していた制作会社での開発が難航し、リリースまで残り2ヶ月の段階で自社にて開発を全て巻き取りました。特に会員機能周りの構築には時間を要したため、時には深夜まで開発を行いつつ、期間内にリリースすることができました。新卒1年目でのこの経験は、私にとって非常に大切な経験となりました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">工夫した点と成果</th>
+                                <td>
+                                    <ol>
+                                        <li>短い開発期間であっても、構築にあたってドキュメントを丁寧に読み込みました。
+                                        </li>
+                                        <li>実際のユースケースを想定し、起こりうる可能性のある行動パターンの抽出とテストを着実に行いました。</li>
+                                        <li>運用フェーズでは、マニュアルを作成し、社内メンバーに対して管理方法の指導を行い、保守運用の体制づくりに貢献しました。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
                 <div class="work-item">
-                    <!-- <p class="work-category"></p> -->
                     <h2>観光情報のデータ化可視化ポータルサイト</h2>
                     <p class="work-period">（2024年度～現在）</p>
-                    <!-- <div class="work-images">
-                        <img src="" alt="">
-                    </div> -->
                     <table class="work-info-table">
-                        <tr>
-                            <th>概要</th>
-                            <td>観光振興を目的に、県内の観光データを「見える化」するポータルサイトを構築しました。事前申込やログイン操作を不要とし、県内の観光事業者、団体、自治体など地域の方々が、当サイトに掲載のデータを用いて事業戦略の立案や、観光データ分析を行うことを可能にしました。利用可能なデータには、GPSデータから推計した人流データや、クレジットカード消費データなど、観光業界の分析に適した情報が揃っています。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>クライアント</th>
-                            <td>県庁／コンサルティング・リサーチ会社
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>技術・環境</th>
-                            <td>PHP、HTML、CSS、JavaScript、GA4</td>
-                        </tr>
-                        <tr>
-                            <th>自身の役割<br>(ポジション・関与範囲)</th>
-                            <td>ポータルサイト制作の主担当者として、制作のディレクションおよび開発（マークアップ・サーバー運用）を担当しました。観光関連事業者の具体的なユースケースを想定したUI/UX設計を行い、複数回のレビューを重ねてブラッシュアップをしました。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>苦労した点</th>
-                            <td>
-                                <ol>
-                                    <li>運用の都合上、データ格納サーバーとドメイン保有サーバーが異なる運用となったため、DNSレコードの設定に工夫が必要でした。
-                                    </li>
-                                    <li>限られた開発期間の中で指定日にリリースできるよう、掲載データの格納方式や掲載方法について、コンサルティング・リサーチ会社の担当者と綿密に連絡を取り調整をしました。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>工夫した点と成果</th>
-                            <td>
-                                <ol>
-                                    <li>サイト訪問者の属性を把握するため、gtagをサイトに埋め込み、GA4の計測を有効化しました。クライアントと自社へ管理者権限を付与し、データ分析が可能な環境を整えました。
-                                    </li>
-                                    <li>デザイン面では、自治体らしさを表す色をメインカラーに採用し、サンセリフ体によって優美な印象を演出しました。</li>
-                                    <li>本ポータルサイトは、2025年度グッドデザイン賞に選出されました。観光事業者がデータと向き合うきっかけを提供し、客観的なデータを活用した施策立案を促す仕組みが評価されました。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th scope="row">概要</th>
+                                <td>観光振興を目的に、県内の観光データを「見える化」するポータルサイトを構築しました。事前申込やログイン操作を不要とし、県内の観光事業者、団体、自治体など地域の方々が、当サイトに掲載のデータを用いて事業戦略の立案や、観光データ分析を行うことを可能にしました。利用可能なデータには、GPSデータから推計した人流データや、クレジットカード消費データなど、観光業界の分析に適した情報が揃っています。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">クライアント</th>
+                                <td>県庁／コンサルティング・リサーチ会社
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">技術・環境</th>
+                                <td>PHP、HTML、CSS、JavaScript、GA4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">自身の役割<br>(ポジション・関与範囲)</th>
+                                <td>ポータルサイト制作の主担当者として、制作のディレクションおよび開発（マークアップ・サーバー運用）を担当しました。観光関連事業者の具体的なユースケースを想定したUI/UX設計を行い、複数回のレビューを重ねてブラッシュアップをしました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">苦労した点</th>
+                                <td>
+                                    <ol>
+                                        <li>運用の都合上、データ格納サーバーとドメイン保有サーバーが異なる運用となったため、DNSレコードの設定に工夫が必要でした。
+                                        </li>
+                                        <li>限られた開発期間の中で指定日にリリースできるよう、掲載データの格納方式や掲載方法について、コンサルティング・リサーチ会社の担当者と綿密に連絡を取り調整をしました。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">工夫した点と成果</th>
+                                <td>
+                                    <ol>
+                                        <li>サイト訪問者の属性を把握するため、gtagをサイトに埋め込み、GA4の計測を有効化しました。クライアントと自社へ管理者権限を付与し、データ分析が可能な環境を整えました。
+                                        </li>
+                                        <li>デザイン面では、自治体らしさを表す色をメインカラーに採用し、サンセリフ体によって優美な印象を演出しました。</li>
+                                        <li>本ポータルサイトは、2025年度グッドデザイン賞に選出されました。観光事業者がデータと向き合うきっかけを提供し、客観的なデータを活用した施策立案を促す仕組みが評価されました。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
@@ -159,46 +156,48 @@
                     <h2>インバウンド向けOTA（Online Travel Agency）型予約サイト</h2>
                     <p class="work-period">（2025年度）</p>
                     <table class="work-info-table">
-                        <tr>
-                            <th>概要</th>
-                            <td>訪日外国人旅行者が日本国内の体験コンテンツを予約できるOTA（Online Travel
-                                Agency）型予約サイトを構築しました。基本言語を英語とし、体験の検索から予約・決済までを一括で完結できる仕組みを整えました。</td>
-                        </tr>
-                        <tr>
-                            <th>クライアント</th>
-                            <td>自社開発</td>
-                        </tr>
-                        <tr>
-                            <th>技術・環境</th>
-                            <td>WordPress、JTB BÓKUN、CloudFlare CDN</td>
-                        </tr>
-                        <tr>
-                            <th>自身の役割<br>(ポジション・関与範囲)</th>
-                            <td>サイト制作の主担当者として、基盤構築からコンテンツの整備、運用まで一貫して対応しました。掲載コンテンツについて、提供事業者との調整や契約業務も行うほか、予約エンジンとの連携を行い、体験商品の予約を自動で管理できる仕組みを構築しました。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>苦労した点</th>
-                            <td>
-                                <ol>
-                                    <li>サイトの掲載情報について、既存の大手OTA（Tripadvisor等）の情報構成や見せ方を調査し、自社サイトに適した形で反映しました。</li>
-                                    <li>仏教や伝統文化に関する用語など、日本語から英語に訳す際に注意が必要な箇所については、ネイティブチェックを依頼するほか、社寺の公式サイト等で一般的な表記方法を調査し、適切な英訳を採用しました。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>工夫した点と成果</th>
-                            <td>
-                                <ol>
-                                    <li>全世界からのアクセスを想定し、CloudFlareのCDNを導入しました。DNSレコードをプロキシ化することで、表示速度の向上とセキュリティの強化を図りました。
-                                    </li>
-                                    <li>予約エンジンにはJTB
-                                        BÓKUNを採用し、体験商品の在庫や予約情報を一元管理できる環境を構築しました。これによりユーザーはサイト上で体験予約から決済までを完了できます。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th scope="row">概要</th>
+                                <td>訪日外国人旅行者が日本国内の体験コンテンツを予約できるOTA（Online Travel
+                                    Agency）型予約サイトを構築しました。基本言語を英語とし、体験の検索から予約・決済までを一括で完結できる仕組みを整えました。</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">クライアント</th>
+                                <td>自社開発</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">技術・環境</th>
+                                <td>WordPress、JTB BÓKUN、CloudFlare CDN</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">自身の役割<br>(ポジション・関与範囲)</th>
+                                <td>サイト制作の主担当者として、基盤構築からコンテンツの整備、運用まで一貫して対応しました。掲載コンテンツについて、提供事業者との調整や契約業務も行うほか、予約エンジンとの連携を行い、体験商品の予約を自動で管理できる仕組みを構築しました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">苦労した点</th>
+                                <td>
+                                    <ol>
+                                        <li>サイトの掲載情報について、既存の大手OTA（Tripadvisor等）の情報構成や見せ方を調査し、自社サイトに適した形で反映しました。</li>
+                                        <li>仏教や伝統文化に関する用語など、日本語から英語に訳す際に注意が必要な箇所については、ネイティブチェックを依頼するほか、社寺の公式サイト等で一般的な表記方法を調査し、適切な英訳を採用しました。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">工夫した点と成果</th>
+                                <td>
+                                    <ol>
+                                        <li>全世界からのアクセスを想定し、CloudFlareのCDNを導入しました。DNSレコードをプロキシ化することで、表示速度の向上とセキュリティの強化を図りました。
+                                        </li>
+                                        <li>予約エンジンにはJTB
+                                            BÓKUNを採用し、体験商品の在庫や予約情報を一元管理できる環境を構築しました。これによりユーザーはサイト上で体験予約から決済までを完了できます。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
@@ -206,53 +205,55 @@
                     <h2>フィルムコミッションWebサイト</h2>
                     <p class="work-period">（2025年度）</p>
                     <table class="work-info-table">
-                        <tr>
-                            <th>概要</th>
-                            <td>映像制作者や制作会社が、県内のロケ地を探せる多言語Webサイトを制作しました。<br>管理者・編集者が簡単にロケ地情報を追加・編集できるCMS環境（WordPress）を整備しました。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>クライアント</th>
-                            <td>県庁</td>
-                        </tr>
-                        <tr>
-                            <th>技術・環境</th>
-                            <td>WordPress、JetEngine、Figma</td>
-                        </tr>
-                        <tr>
-                            <th>自身の役割<br>(ポジション・関与範囲)</th>
-                            <td>Webサイト制作の主担当者として、要件定義からデザイン、開発、運用サポートまでを一貫して担当しました。サーバー環境の設定や、セキュリティ対策、バックアップ設定や更新マニュアルの作成など、運用面も含めて基盤づくりを行いました。
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>苦労した点</th>
-                            <td>
-                                <ol>
-                                    <li>20種類以上のロケ地タクソノミーと、それぞれに設定された複数カテゴリを使った検索・絞り込み機能の実装を行いました。タクソノミーごとに個別のフィルターを設け、各タクソノミーをOR条件でつなぎ、エリアのみAND条件で処理するようクエリを設定しました。どのような条件の組み合わせでも正確に結果が表示されるよう、ロジックの整理とテストを丁寧に行いました。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>工夫した点と成果</th>
-                            <td>
-                                <ol>
-                                    <li>機能性を重視し、映像制作者が目的のロケ地情報にすぐたどり着ける導線づくりを意識しました。
-                                    </li>
-                                    <li>ロケ地検索では、ページの読み込みを極力減らすため、Ajaxによる非同期検索を採用し、モバイル環境でも軽快に動作するよう工夫しました。
-                                    </li>
-                                </ol>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th scope="row">概要</th>
+                                <td>映像制作者や制作会社が、県内のロケ地を探せる多言語Webサイトを制作しました。<br>管理者・編集者が簡単にロケ地情報を追加・編集できるCMS環境（WordPress）を整備しました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">クライアント</th>
+                                <td>県庁</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">技術・環境</th>
+                                <td>WordPress、JetEngine、Figma</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">自身の役割<br>(ポジション・関与範囲)</th>
+                                <td>Webサイト制作の主担当者として、要件定義からデザイン、開発、運用サポートまでを一貫して担当しました。サーバー環境の設定や、セキュリティ対策、バックアップ設定や更新マニュアルの作成など、運用面も含めて基盤づくりを行いました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">苦労した点</th>
+                                <td>
+                                    <ol>
+                                        <li>20種類以上のロケ地タクソノミーと、それぞれに設定された複数カテゴリを使った検索・絞り込み機能の実装を行いました。タクソノミーごとに個別のフィルターを設け、各タクソノミーをOR条件でつなぎ、エリアのみAND条件で処理するようクエリを設定しました。どのような条件の組み合わせでも正確に結果が表示されるよう、ロジックの整理とテストを丁寧に行いました。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">工夫した点と成果</th>
+                                <td>
+                                    <ol>
+                                        <li>機能性を重視し、映像制作者が目的のロケ地情報にすぐたどり着ける導線づくりを意識しました。
+                                        </li>
+                                        <li>ロケ地検索では、ページの読み込みを極力減らすため、Ajaxによる非同期検索を採用し、モバイル環境でも軽快に動作するよう工夫しました。
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
             </div>
         </section>
 
-        <section class="other-works">
+        <section class="other-works" aria-labelledby="other-works-heading">
             <div class="container">
-                <h2>Web制作以外の実績</h2>
+                <h2 id="other-works-heading">Web制作以外の実績</h2>
 
                 <div class="other-work-item">
                     <h3>・旅行業務関連</h3>
@@ -277,29 +278,29 @@
     </main>
 
     <footer>
-        <div class="footer-nav">
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
             <a href="index.html">トップ</a>
             <a href="works-skills.html">これまでの制作事例</a>
             <a href="aws-projects.html">AWS関係の制作物</a>
-        </div>
+        </nav>
         <a href="index.html" class="footer-logo">
             <img src="images/maruko-portfolio.svg" alt="Site logo">
         </a>
         <div class="footer-social-links">
-            <a href="https://github.com/sae-maruyama/" target="_blank" aria-label="GitHub">
-                <img src="images/github-logo.png" alt="GitHub">
+            <a href="https://github.com/sae-maruyama/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github-logo.png" alt="">
             </a>
-            <a href="https://x.com/maruko_112" target="_blank" aria-label="X (Twitter)">
-                <img src="images/x-logo.png" alt="X">
+            <a href="https://x.com/maruko_112" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <img src="images/x-logo.png" alt="">
             </a>
-            <a href="https://zenn.dev/kuyan" target="_blank" aria-label="Zenn">
-                <img src="images/zenn-logo.png" alt="X">
+            <a href="https://zenn.dev/kuyan" target="_blank" rel="noopener noreferrer" aria-label="Zenn">
+                <img src="images/zenn-logo.png" alt="">
             </a>
         </div>
         <p class="copyright">©2025 Maruko. All rights reserved</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 
     <script type="text/javascript">
         (function (w, d, x, id) {

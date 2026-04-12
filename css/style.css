@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+/* CSS Custom Properties */
+:root {
+    --color-green-dark: #2d5016;
+    --color-green-main: #74A84A;
+    --color-green-hover: #5d8a39;
+    --color-text: #333;
+    --color-text-muted: #666;
+    --color-text-light: #999;
+    --color-bg: #f5f5f5;
+    --color-bg-white: #fff;
+    --color-bg-light: #f9f9f9;
+    --color-border: #e0e0e0;
+    --color-border-light: #ddd;
+    --max-width: 1100px;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -5,14 +23,31 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+/* Screen reader only utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus Styles */
+:focus-visible {
+    outline: 2px solid var(--color-green-main);
+    outline-offset: 3px;
+}
 
 body {
     font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
     line-height: 1.8;
-    color: #333;
-    background-color: #f5f5f5;
-    font-size: 16px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-size: 1rem;
 }
 
 h1,
@@ -30,7 +65,7 @@ img {
 }
 
 a {
-    color: #74A84A;
+    color: var(--color-green-main);
     text-decoration: none;
     transition: opacity 0.3s;
 }
@@ -47,10 +82,17 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
 }
 
 .header-container {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -70,8 +112,8 @@ nav ul {
 }
 
 nav a {
-    color: #333;
-    font-size: 14px;
+    color: var(--color-text);
+    font-size: 0.875rem;
     font-weight: 500;
 }
 
@@ -81,14 +123,16 @@ nav a {
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
+    background: none;
+    border: none;
 }
 
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: var(--color-text);
     margin: 3px 0;
-    transition: 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -145,9 +189,8 @@ nav a {
 }
 
 .hero h1 {
-    font-family: 'Jost', sans-serif;
-    font-size: 75px;
-    color: #2d5016;
+    font-size: 4.6875rem;
+    color: var(--color-green-dark);
     letter-spacing: 8px;
     margin-bottom: 10px;
     font-weight: 600;
@@ -164,33 +207,34 @@ nav a {
 }
 
 .hero.page-title h1 {
-    font-size: 45px;
+    font-size: 2.8125rem;
 }
 
 .hero p {
-    font-size: 26px;
-    color: #333;
+    font-size: 1.625rem;
+    color: var(--color-text);
 }
 
 /* Main Content */
-main {
-    padding-top: 0;
-}
-
 .container {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* About Section */
-.about {
-    background-color: #fff;
+/* White Section Base */
+.about,
+.aws-section,
+.learning-section,
+.certifications-section,
+.work-detail {
+    background-color: var(--color-bg-white);
     padding: 40px 20px;
 }
 
+/* About Section */
 .about-content {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -210,25 +254,45 @@ main {
 }
 
 .about-text h2 {
-    font-size: 28px;
-    color: #2d5016;
+    font-size: 1.75rem;
+    color: var(--color-green-dark);
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #74A84A;
+    border-bottom: 2px solid var(--color-green-main);
 }
 
 .about-text h3 {
-    font-size: 16px;
-    color: #333;
+    font-size: 1rem;
+    color: var(--color-text);
     margin-top: 25px;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .about-text p {
-    font-size: 16px;
     line-height: 1.8;
     margin-bottom: 15px;
+}
+
+/* Social Links (shared) */
+.social-links a,
+.footer-social-links a {
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.social-links a:last-child,
+.footer-social-links a:last-child {
+    width: 80px;
+    /* Zenn logo */
+    margin-right: 0;
+}
+
+.social-links img,
+.footer-social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .social-links {
@@ -236,23 +300,9 @@ main {
 }
 
 .social-links a {
-    display: inline-block;
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    transition: opacity 0.3s;
-}
-
-.social-links a:last-child {
-    width: 80px;
-    /* Zenn logo */
-    margin-right: 0;
-}
-
-.social-links img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 /* Works Section */
@@ -264,32 +314,31 @@ main {
 
 .section-title {
     text-align: center;
-    font-size: 28px;
-    color: #2d5016;
+    font-size: 1.75rem;
+    color: var(--color-green-dark);
     margin-bottom: 15px;
 }
 
 .section-subtitle {
     text-align: center;
-    font-size: 16px;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 40px;
 }
 
 .btn {
     display: inline-block;
     padding: 12px 40px;
-    background-color: #74A84A;
-    color: #fff;
+    background-color: var(--color-green-main);
+    color: var(--color-bg-white);
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     text-align: center;
     transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #5d8a39;
+    background-color: var(--color-green-hover);
     opacity: 1;
 }
 
@@ -299,21 +348,14 @@ main {
 }
 
 /* AWS Section */
-.aws-section {
-    background-color: #fff;
-    padding: 40px 20px;
-}
-
 .aws-intro {
-    max-width: 1100px;
-    margin: 0 auto 60px;
+    margin-bottom: 60px;
     text-align: left;
-    font-size: 16px;
     line-height: 1.8;
 }
 
 .project-item {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -326,13 +368,12 @@ main {
 }
 
 .project-text h3 {
-    font-size: 25px;
-    color: #2d5016;
+    font-size: 1.5625rem;
+    color: var(--color-green-dark);
     margin-bottom: 20px;
 }
 
 .project-text p {
-    font-size: 16px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -343,30 +384,48 @@ main {
 
 .project-image img {
     max-width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border-light);
     border-radius: 4px;
 }
 
-/* Learning Section */
-.learning-section {
-    background-color: #fff;
-    padding: 40px 20px;
+/* Shared Table Styles */
+.learning-table,
+.work-info-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
 }
 
+.learning-table tr,
+.work-info-table tr {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.learning-table th,
+.work-info-table th {
+    text-align: left;
+    padding: 15px 20px;
+    font-weight: 600;
+}
+
+.learning-table td,
+.work-info-table td {
+    padding: 15px 20px;
+}
+
+/* Learning Section */
 .learning-section h2 {
-    font-size: 28px;
-    color: #2d5016;
+    font-size: 1.75rem;
+    color: var(--color-green-dark);
     margin-bottom: 10px;
 }
 
 .learning-section .period {
-    font-size: 16px;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 30px;
 }
 
 .learning-section .mentor-info {
-    font-size: 16px;
     line-height: 1.8;
     margin-bottom: 30px;
 }
@@ -378,50 +437,30 @@ main {
     align-items: start;
 }
 
-.learning-table {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.learning-table tr {
-    border-bottom: 1px solid #e0e0e0;
-}
-
 .learning-table th {
-    text-align: left;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: #f5f5f5;
+    background-color: var(--color-bg);
     width: 25%;
 }
 
 .learning-table td {
-    padding: 15px 20px;
-    font-size: 16px;
     line-height: 1.6;
 }
 
 .learning-image img {
     max-width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border-light);
 }
 
 .learning-image p {
-    font-size: 12px;
-    color: #666;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
     margin-top: 10px;
 }
 
 /* Certifications Section */
-.certifications-section {
-    background-color: #fff;
-    padding: 40px 20px;
-}
-
 .certifications-section h2 {
-    font-size: 28px;
-    color: #2d5016;
+    font-size: 1.75rem;
+    color: var(--color-green-dark);
     margin-bottom: 30px;
 }
 
@@ -443,31 +482,24 @@ main {
 }
 
 /* Work Detail Section */
-.work-detail {
-    background-color: #fff;
-    padding: 40px 20px;
-}
-
 .work-item {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto 80px;
 }
 
 .work-category {
-    font-size: 16px;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 10px;
 }
 
 .work-item h2 {
-    font-size: 28px;
-    color: #2d5016;
+    font-size: 1.75rem;
+    color: var(--color-green-dark);
     margin-bottom: 10px;
 }
 
 .work-period {
-    font-size: 16px;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 30px;
 }
 
@@ -478,39 +510,22 @@ main {
 
 .work-images img {
     width: 100%;
-    max-width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border-light);
     border-radius: 4px;
 }
 
-.work-info-table {
-    width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
-}
-
-.work-info-table tr {
-    border-bottom: 1px solid #e0e0e0;
-}
-
 .work-info-table th {
-    text-align: left;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: #f9f9f9;
+    background-color: var(--color-bg-light);
     width: 20%;
     vertical-align: top;
 }
 
 .work-info-table td {
-    padding: 15px 20px;
-    font-size: 16px;
     line-height: 1.8;
 }
 
 .work-info-table td ol {
-    padding: 0px 20px;
+    padding: 0 20px;
 }
 
 /* Other Works Section */
@@ -522,38 +537,37 @@ main {
 
 .other-works h2 {
     text-align: center;
-    font-size: 28px;
-    color: #2d5016;
+    font-size: 1.75rem;
+    color: var(--color-green-dark);
     margin-bottom: 40px;
 }
 
 .other-work-item {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto 30px;
-    background-color: #fff;
+    background-color: var(--color-bg-white);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .other-work-item h3 {
-    font-size: 16px;
-    color: #2d5016;
+    font-size: 1rem;
+    color: var(--color-green-dark);
     margin-bottom: 10px;
 }
 
 .other-work-item p {
-    font-size: 16px;
     line-height: 1.8;
-    color: #666;
+    color: var(--color-text-muted);
 }
 
 /* Footer */
 footer {
-    background-color: #f9f9f9;
+    background-color: var(--color-bg-light);
     padding: 40px 20px;
     text-align: center;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--color-border);
 }
 
 .footer-nav {
@@ -561,8 +575,8 @@ footer {
 }
 
 .footer-nav a {
-    color: #333;
-    font-size: 13px;
+    color: var(--color-text);
+    font-size: 0.8125rem;
     margin: 0 15px;
 }
 
@@ -578,39 +592,18 @@ footer {
 }
 
 .footer-social-links {
-    margin: 0px 0;
+    margin: 0;
 }
 
 .footer-social-links a {
-    display: inline-block;
     width: 30px;
     height: 30px;
     margin: 0 10px;
-    transition: opacity 0.3s;
-}
-
-.footer-social-links a:last-child {
-    width: 80px;
-    /* Zenn logo */
-    margin-right: 0;
-}
-
-.footer-social-links img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.footer-title {
-    font-size: 18px;
-    color: #2d5016;
-    margin-bottom: 10px;
-    font-weight: 600;
 }
 
 .copyright {
-    font-size: 12px;
-    color: #999;
+    font-size: 0.75rem;
+    color: var(--color-text-light);
 }
 
 /* Responsive Design - Tablet */
@@ -625,7 +618,7 @@ footer {
         right: -100%;
         width: 250px;
         height: calc(100vh - 70px);
-        background-color: #fff;
+        background-color: var(--color-bg-white);
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
         transition: right 0.3s;
         z-index: 999;
@@ -643,13 +636,13 @@ footer {
 
     nav ul li {
         width: 100%;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid var(--color-border);
     }
 
     nav a {
         display: block;
         padding: 15px 0;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .logo img {
@@ -662,7 +655,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 2.5rem;
         letter-spacing: 4px;
     }
 
@@ -671,15 +664,15 @@ footer {
     }
 
     .hero.page-title h1 {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .section-title {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     .about-content {
@@ -705,11 +698,11 @@ footer {
 
     .learning-table th {
         width: 30%;
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     .learning-table td {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     .footer-nav a {
@@ -727,7 +720,7 @@ footer {
 
     /* トップページのヒーローコンテンツのフォントサイズを拡大 */
     .hero.hero-top h1 {
-        font-size: 40px;
+        font-size: 2.5rem;
         letter-spacing: 2px;
     }
 
@@ -736,7 +729,7 @@ footer {
     }
 
     .hero.hero-top p {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     /* 制作事例・AWS関係ページのヒーローセクションを半分の高さに、背景画像は下部固定 */
@@ -750,7 +743,7 @@ footer {
     }
 
     .hero.page-title h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .section-title,
@@ -759,11 +752,11 @@ footer {
     .other-works h2,
     .learning-section h2,
     .certifications-section h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .project-text h3 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .project-item {
@@ -771,47 +764,33 @@ footer {
     }
 
     /* 学習テーブルのレスポンシブ */
-    .learning-table th {
-        display: block;
-        width: 100%;
-        background-color: #f5f5f5;
-        border-bottom: none;
-    }
-
-    .learning-table td {
-        display: block;
-        width: 100%;
-        padding-top: 5px;
-    }
-
-    .learning-table tr {
-        display: block;
-        margin-bottom: 20px;
-        border: 1px solid #e0e0e0;
-        border-radius: 4px;
-    }
-
-    /* 制作事例詳細ページのテーブルはフォントサイズ16pxを維持 */
+    .learning-table th,
     .work-info-table th {
         display: block;
         width: 100%;
-        background-color: #f5f5f5;
+        background-color: var(--color-bg);
         border-bottom: none;
-        font-size: 16px;
     }
 
+    .learning-table td,
     .work-info-table td {
         display: block;
         width: 100%;
         padding-top: 5px;
-        font-size: 16px;
     }
 
+    .learning-table tr,
     .work-info-table tr {
         display: block;
         margin-bottom: 20px;
-        border: 1px solid #e0e0e0;
+        border: 1px solid var(--color-border);
         border-radius: 4px;
+    }
+
+    /* 制作事例詳細ページのテーブルはフォントサイズ16pxを維持 */
+    .work-info-table th,
+    .work-info-table td {
+        font-size: 1rem;
     }
 
     .certification-item img {
